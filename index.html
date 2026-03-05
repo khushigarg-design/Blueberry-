@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I love you Zaki 💗</title>
+
+<style>
+body{
+margin:0;
+overflow:hidden;
+font-family:"Comic Sans MS",cursive;
+background:linear-gradient(135deg,#ffd6ec,#e0f7ff,#fff0d6);
+}
+
+/* Soft floating love background */
+.love-bg{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:1;
+}
+
+.love{
+position:absolute;
+font-size:20px;
+opacity:0.4;
+animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+.rotateMsg{
+position:fixed;
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fff0f6;
+font-size:22px;
+z-index:50;
+text-align:center;
+}
+
+.main{
+display:none;
+position:relative;
+width:100%;
+height:100vh;
+overflow:hidden;
+z-index:5;
+}
+
+.counter{
+position:absolute;
+top:15px;
+right:20px;
+background:rgba(255,255,255,0.75);
+padding:10px 15px;
+border-radius:20px;
+font-size:14px;
+box-shadow:0 0 15px pink;
+z-index:5;
+}
+
+.slider{
+position:absolute;
+width:200%;
+height:100%;
+display:flex;
+animation:slide 25s linear infinite;
+opacity:0.35;
+}
+
+.slider img{
+width:16.6%;
+object-fit:cover;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+.envelope{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:220px;
+height:160px;
+background:white;
+border:3px solid #ff9acb;
+border-radius:15px;
+box-shadow:0 0 25px pink;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+transition:0.5s;
+z-index:10;
+}
+
+.letter{
+display:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+width:85%;
+height:75%;
+background:#fffdf8;
+border-radius:20px;
+padding:20px;
+overflow:auto;
+box-shadow:0 0 30px rgba(0,0,0,0.2);
+transition:0.6s;
+z-index:15;
+}
+
+#typedText{
+font-size:18px;
+color:#222;
+white-space:pre-line;
+}
+
+.collage{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:15px;
+}
+
+.collage img{
+width:100%;
+border-radius:12px;
+filter:grayscale(100%);
+}
+
+.stickman{
+position:absolute;
+bottom:20px;
+left:-60px;
+font-size:35px;
+display:none;
+animation:walk 5s linear forwards;
+z-index:20;
+}
+
+@keyframes walk{
+0%{left:-60px;}
+100%{left:75%;}
+}
+
+.heart{
+position:absolute;
+top:-10px;
+font-size:18px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{transform:translateY(100vh);}
+}
+
+.forever{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#ffb6e6,#ffd6ec,#ffe6f7);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-size:45px;
+color:white;
+text-shadow:0 0 25px hotpink;
+opacity:0;
+pointer-events:none;
+transition:2s;
+z-index:100;
+}
+
+.forever.show{
+opacity:1;
+}
+
+.forever small{
+font-size:20px;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="love-bg" id="loveBg"></div>
+
+<div class="rotateMsg">Rotate your phone sideways 💗</div>
+
+<div class="main">
+
+<div class="counter" id="loveCounter"></div>
+
+<!-- YOUR COLOUR SLIDER IMAGES -->
+<div class="slider">
+<img src="https://i.ibb.co/Y4V5vwbD/IMG-20260305-053054-448.jpg">
+<img src="https://i.ibb.co/SX0HZKK0/IMG-20260305-053051-736.jpg">
+<img src="https://i.ibb.co/JFRkXFp7/IMG-20260305-053046-237.jpg">
+<img src="https://i.ibb.co/Q74Q44yq/Screenshot-20260123-184542.png">
+<img src="https://i.ibb.co/dsJkFc34/1768413296832.png">
+<img src="https://i.ibb.co/Y4V5vwbD/IMG-20260305-053054-448.jpg">
+<img src="https://i.ibb.co/SX0HZKK0/IMG-20260305-053051-736.jpg">
+<img src="https://i.ibb.co/JFRkXFp7/IMG-20260305-053046-237.jpg">
+<img src="https://i.ibb.co/Q74Q44yq/Screenshot-20260123-184542.png">
+<img src="https://i.ibb.co/dsJkFc34/1768413296832.png">
+</div>
+
+<div class="envelope">💌</div>
+
+<div class="letter">
+<div id="typedText"></div>
+
+<!-- YOUR BLACK & WHITE COLLAGE -->
+<div class="collage">
+<img src="https://i.ibb.co/xpWNNdy/IMG-20260305-050145.jpg">
+<img src="https://i.ibb.co/F4FwKRTT/IMG-20260305-050450.png">
+<img src="https://i.ibb.co/HpC09BRR/IMG-20260305-050228.jpg">
+<img src="https://i.ibb.co/whzZDTf6/IMG-20260305-050525.jpg">
+</div>
+</div>
+
+<div class="stickman">🧍‍♂️💗</div>
+
+</div>
+
+<div class="forever" id="foreverScreen">
+💍 Forever 💗
+<small>Together since May 16, 2025</small>
+</div>
+
+<script>
+
+/* Floating Love Background */
+setInterval(()=>{
+let love=document.createElement("div");
+love.className="love";
+love.innerHTML="💗";
+love.style.left=Math.random()*100+"vw";
+love.style.animationDuration=(6+Math.random()*4)+"s";
+document.getElementById("loveBg").appendChild(love);
+setTimeout(()=>love.remove(),10000);
+},800);
+
+/* Orientation */
+function checkOrientation(){
+if(window.innerHeight > window.innerWidth){
+document.querySelector(".rotateMsg").style.display="flex";
+document.querySelector(".main").style.display="none";
+}else{
+document.querySelector(".rotateMsg").style.display="none";
+document.querySelector(".main").style.display="block";
+}
+}
+window.addEventListener("resize",checkOrientation);
+window.addEventListener("load",checkOrientation);
+
+/* Together Counter */
+const startDate = new Date("May 16, 2025 00:00:00");
+const counter = document.getElementById("loveCounter");
+
+function updateCounter(){
+const now = new Date();
+const diff = now - startDate;
+const days = Math.floor(diff / (1000*60*60*24));
+const hours = Math.floor((diff / (1000*60*60)) % 24);
+const minutes = Math.floor((diff / (1000*60)) % 60);
+
+counter.innerHTML =
+"💞 Together since May 16, 2025<br>" +
+days + " days 💗 " +
+hours + " hrs 💫 " +
+minutes + " mins";
+}
+setInterval(updateCounter,1000);
+updateCounter();
+
+/* Typing */
+const message = "I love you Zaki 💗\n\nEvery moment with you feels magical.\nYou are my forever person.";
+let i=0;
+function typeWriter(){
+if(i < message.length){
+document.getElementById("typedText").innerHTML += message.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
+}
+
+document.querySelector(".envelope").onclick = function(){
+this.style.display="none";
+let letter=document.querySelector(".letter");
+letter.style.display="block";
+setTimeout(()=>{letter.style.transform="translate(-50%,-50%) scale(1)";},50);
+
+typeWriter();
+
+setTimeout(()=>{
+document.querySelector(".stickman").style.display="block";
+},3000);
+
+setTimeout(()=>{
+letter.style.transform="translate(-50%,-50%) scale(0)";
+},7000);
+
+setTimeout(()=>{
+document.getElementById("foreverScreen").classList.add("show");
+},9000);
+};
+
+/* Falling hearts */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💗";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},600);
+
+</script>
+
+</body>
+  </html>
